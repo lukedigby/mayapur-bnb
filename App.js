@@ -1,7 +1,5 @@
 import React from 'react';
-import { AsyncStorage, TouchableOpacity } from "react-native"
-import { Button } from 'react-native';
-import { Text, TextInput, View } from 'glamorous-native';
+import { View } from 'glamorous-native';
 import Listings from './components/Listings';
 import { Provider as PaperProvider } from 'react-native-paper';
 
@@ -11,27 +9,27 @@ class App extends React.Component {
     listings: [
       {
         description: '2 Bedroom Flat',
-        price: '₹2500'
+        price: '2500'
       },
       {
         description: 'Single Room',
-        price: '₹500'
+        price: '500'
       },
       {
         description: '1 Bedroom Apartment',
-        price: '₹1500'
+        price: '1500'
       },
       {
         description: '1 Bedroom Apartment',
-        price: '₹1500'
+        price: '1500'
       },
       {
         description: '1 Bedroom Apartment',
-        price: '₹1500'
+        price: '1500'
       },
       {
         description: '1 Bedroom Apartment',
-        price: '₹1500'
+        price: '1500'
       }
     ]
   }
@@ -40,7 +38,9 @@ class App extends React.Component {
     return (
       <PaperProvider>
         <View justifyContent="space-around" height="100%">
-          <Listings listings={this.state.listings} />
+          {this.state.listings ? (
+            <Listings listings={this.state.listings} />
+          ) : null }
         </View>
       </PaperProvider>
     );
