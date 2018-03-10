@@ -5,33 +5,25 @@ import { View } from 'glamorous-native';
 import { Provider as PaperProvider } from 'react-native-paper';
 
 class ScreensPropertyList extends React.Component {
-  state = {
-    properties: [
-      {
-        description: '2 Bedroom Flat',
-        price: '2500'
-      },
-      {
-        description: 'Single Room',
-        price: '500'
-      },
-      {
-        description: '1 Bedroom Apartment',
-        price: '1500'
-      },
-      {
-        description: '1 Bedroom Apartment',
-        price: '1500'
-      },
-      {
-        description: '1 Bedroom Apartment',
-        price: '1500'
-      },
-      {
-        description: '1 Bedroom Apartment',
-        price: '1500'
-      }
-    ]
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      properties: [
+        {
+          description: '2 Bedroom Flat',
+          price: '2500'
+        },
+        {
+          description: 'Single Room',
+          price: '500'
+        },
+        {
+          description: '1 Bedroom Apartment',
+          price: '1500'
+        },
+      ]
+    }
   }
 
   static navigationOptions = {
@@ -39,7 +31,6 @@ class ScreensPropertyList extends React.Component {
   }
 
   showProperty() {
-    Alert.alert('Testing!')
     this.props.navigation.navigate('Detail')
   }
 
@@ -48,7 +39,7 @@ class ScreensPropertyList extends React.Component {
       <PaperProvider>
         <View justifyContent="space-around" height="100%">
           {this.state.properties ? (
-            <PropertyList properties={this.state.properties} onPressProperty={this.showProperty} />
+            <PropertyList properties={this.state.properties} onPressProperty={this.showProperty.bind(this)} />
           ) : null }
         </View>
       </PaperProvider>

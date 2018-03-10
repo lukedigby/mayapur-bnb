@@ -1,7 +1,7 @@
 import React from 'react';
 import PropertyList from './List';
 import PropertyListItem from './Item';
-import { ScrollView, View } from 'glamorous-native';
+import { ScrollView, View, TouchableOpacity } from 'glamorous-native';
 import Images from '@assets/images'
 
 import renderer from 'react-test-renderer';
@@ -22,6 +22,7 @@ describe("PropertyList", () => {
   beforeEach(() => {
     props = {
       properties: undefined,
+      onPressProperty: jest.fn()
     };
     renderedPropertyList = undefined;
   });
@@ -61,6 +62,11 @@ describe("PropertyList", () => {
       const propertyListItem = propertyList().findByType(PropertyListItem);
       expect(propertyListItem.props.image).toBe(props.properties[0].image);
     });
+
+    it("sets the rendered `PropertyListItem`'s `onPress` prop to the same value as `onPressProperty`", () => {
+      const propertyListItem = propertyList().findByType(PropertyListItem)
+      expect(propertyListItem.props.onPressProperty).toBe(props.onPressProperty)
+    })
   });
 
   describe("when `properties` is undefined", () => {
@@ -68,5 +74,7 @@ describe("PropertyList", () => {
       expect(propertyList().findAllByType(PropertyListItem).length).toBe(0);
     });
   });
+  
+
 
 })

@@ -13,9 +13,7 @@ class ScreensPropertyDetail extends React.Component {
     return (
       <PaperProvider>
         <View justifyContent="space-around" height="100%">
-          {this.state.properties ? (
-            <PropertyDetail />
-          ) : null }
+          <PropertyDetail />
         </View>
       </PaperProvider>
     );

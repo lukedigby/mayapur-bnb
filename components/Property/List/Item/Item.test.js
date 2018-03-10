@@ -22,12 +22,18 @@ describe("PropertyListItem", () => {
     props = {
       description: 'Description',
       price: '500',
+      onPressProperty: jest.fn()
     };
     renderedPropertyListItem = undefined;
   });
 
   it('always renders a `Card`', () => {
     expect(propertyListItem().findAllByType(Card).length).toEqual(1)
+  })
+
+  it('passes `onPressProperty` to the rendered `Card` as `onPress`', () => {
+    const card = propertyListItem().findByType(Card)
+    expect(card.props.onPress).toBe(props.onPressProperty)
   })
 
   it('always renders a `CardCover`', () => {
