@@ -1,6 +1,7 @@
 import React from 'react';
 import PropertyListItem from './Item';
 import { Card, CardCover, CardContent, Title, Paragraph } from 'react-native-paper';
+import Images from '@assets/images'
 
 import renderer from 'react-test-renderer';
 
@@ -35,7 +36,7 @@ describe("PropertyListItem", () => {
 
   describe('when `image` is passed', () => {
     beforeEach(() => {
-      props.image = '../../../../assets/images/house.jpg'
+      props.image = Images.house
     })
     
     it('passes `image` to the `CardCover` as `source`', () => {

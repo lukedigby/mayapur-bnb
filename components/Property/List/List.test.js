@@ -2,6 +2,7 @@ import React from 'react';
 import PropertyList from './List';
 import PropertyListItem from './Item';
 import { ScrollView, View } from 'glamorous-native';
+import Images from '@assets/images'
 
 import renderer from 'react-test-renderer';
 
@@ -38,7 +39,7 @@ describe("PropertyList", () => {
       props.properties = [{
         description: 'Test Description',
         price: '500',
-        image: '../../../../assets/images/house.jpg'
+        image: Images.house
       }];
     });
 
