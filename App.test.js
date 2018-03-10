@@ -1,6 +1,6 @@
 import React from 'react';
 import App from './App';
-import Listings from './components/Listings';
+import PropertyList from './components/Property/List';
 import { Provider as PaperProvider } from 'react-native-paper';
 
 import renderer from 'react-test-renderer';
@@ -12,12 +12,12 @@ describe("App", () => {
     expect(app.findAllByType(PaperProvider).length).toEqual(1)
   });
 
-  it('renders `Listings`', () => {
-    expect(app.findAllByType(Listings).length).toEqual(1)
+  it('renders `PropertyList`', () => {
+    expect(app.findAllByType(PropertyList).length).toEqual(1)
   });
 
-  it('passes listings as a prop to `Listings`', () => {
-    expect(app.findAllByType(Listings)[0].props.listings).toBeDefined()
+  it('passes `properties` as a prop to `PropertyList`', () => {
+    expect(app.findAllByType(PropertyList)[0].props.properties).toBeDefined()
   })
 
 });

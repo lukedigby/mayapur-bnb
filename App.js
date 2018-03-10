@@ -1,12 +1,12 @@
 import React from 'react';
 import { View } from 'glamorous-native';
-import Listings from './components/Listings';
+import PropertyList from './components/Property/List';
 import { Provider as PaperProvider } from 'react-native-paper';
 
 
 class App extends React.Component {
   state = {
-    listings: [
+    properties: [
       {
         description: '2 Bedroom Flat',
         price: '2500'
@@ -38,8 +38,8 @@ class App extends React.Component {
     return (
       <PaperProvider>
         <View justifyContent="space-around" height="100%">
-          {this.state.listings ? (
-            <Listings listings={this.state.listings} />
+          {this.state.properties ? (
+            <PropertyList properties={this.state.properties} />
           ) : null }
         </View>
       </PaperProvider>

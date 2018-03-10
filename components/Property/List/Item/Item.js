@@ -3,14 +3,14 @@ import { string } from 'prop-types';
 import glamorous, { Image, View, Text } from 'glamorous-native';
 import { Card, CardCover, CardContent, Title, Paragraph } from 'react-native-paper';
 
-Listing.propTypes = {
+PropertyListItem.propTypes = {
   image: string,
   description: string.isRequired,
   price: string.isRequired,
 } 
 
-function Listing({
-  image = '../../assets/images/house.jpg', 
+function PropertyListItem({
+  image = '../../../../assets/images/house.jpg', 
   description, 
   price 
 }) {
@@ -37,4 +37,4 @@ const style = {
   }
 }
 
-export default Listing
+export default PropertyListItem
