@@ -1,6 +1,6 @@
 import React from 'react';
 import { string, oneOfType, number, object } from 'prop-types';
-import glamorous, { Image, View, Text } from 'glamorous-native';
+import { Image, View, Text } from 'glamorous-native';
 import { Card, CardCover, CardContent, Title, Paragraph } from 'react-native-paper';
 import Images from '@assets/images'
 

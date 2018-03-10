@@ -20,7 +20,7 @@
   "jest": {
     "preset": "jest-expo",
     "transformIgnorePatterns": [
-      "node_modules/(?!(jest-)?react-native|glamorous-native|@expo|expo)"
+      "node_modules/(?!(jest-)?react-native|glamorous-native|@expo|expo|react-navigation)"
     ]
   },
   "dependencies": {
