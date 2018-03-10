@@ -3,6 +3,8 @@ import { string } from 'prop-types';
 import glamorous, { Image, View, Text } from 'glamorous-native';
 import { Card, CardCover, CardContent, Title, Paragraph } from 'react-native-paper';
 
+import s from './styles';
+
 PropertyListItem.propTypes = {
   image: string,
   description: string.isRequired,
@@ -15,26 +17,14 @@ function PropertyListItem({
   price 
 }) {
   return (
-    <Card style={style.card}>
+    <Card style={s.card}>
       <CardCover source={require(image)} />
       <CardContent>
-        <Title style={style.title}>{description}</Title>
-        <Paragraph style={style.paragraph}>From ₹{price} per night</Paragraph>
+        <Title style={s.title}>{description}</Title>
+        <Paragraph style={s.paragraph}>From ₹{price} per night</Paragraph>
       </CardContent>
     </Card>
   )
-}
-
-const style = {
-  card: {
-    margin: 20
-  },
-  title: {
-    fontWeight: 'bold'
-  },
-  paragraph: {
-    fontWeight: '300'
-  }
 }
 
 export default PropertyListItem
