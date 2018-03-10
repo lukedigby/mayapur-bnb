@@ -1,15 +1,15 @@
 import React from 'react';
 import ScreensPropertyList from './List';
 import PropertyList from '../../../components/Property/List';
-import { Provider as PaperProvider } from 'react-native-paper';
+import ScreensLayout from '../Layout';
 
 import renderer from 'react-test-renderer';
 
 describe("ScreensPropertyList", () => {
   let screensPropertyList = renderer.create(<ScreensPropertyList />).root
 
-  it('renders a PaperProvider', () => {
-    expect(screensPropertyList.findAllByType(PaperProvider).length).toEqual(1)
+  it('renders a `ScreensLayout`', () => {
+    expect(screensPropertyList.findAllByType(ScreensLayout).length).toEqual(1)
   });
 
   it('renders `PropertyList`', () => {

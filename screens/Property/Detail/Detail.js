@@ -1,7 +1,6 @@
 import React from 'react';
 import PropertyDetail from '../../../components/Property/Detail';
-import { View } from 'glamorous-native';
-import { Provider as PaperProvider } from 'react-native-paper';
+import ScreensLayout from '../Layout'
 
 class ScreensPropertyDetail extends React.Component {
 
@@ -11,11 +10,9 @@ class ScreensPropertyDetail extends React.Component {
 
   render() {
     return (
-      <PaperProvider>
-        <View justifyContent="space-around" height="100%">
-          <PropertyDetail />
-        </View>
-      </PaperProvider>
+      <ScreensLayout>
+        <PropertyDetail />
+      </ScreensLayout>
     );
   }
 }

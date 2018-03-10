@@ -1,8 +1,6 @@
 import React from 'react';
 import PropertyList from '../../../components/Property/List';
-import { Alert } from 'react-native';
-import { View } from 'glamorous-native';
-import { Provider as PaperProvider } from 'react-native-paper';
+import ScreensLayout from '../Layout';
 
 class ScreensPropertyList extends React.Component {
   constructor(props) {
@@ -36,13 +34,11 @@ class ScreensPropertyList extends React.Component {
 
   render() {
     return (
-      <PaperProvider>
-        <View justifyContent="space-around" height="100%">
-          {this.state.properties ? (
-            <PropertyList properties={this.state.properties} onPressProperty={this.showProperty.bind(this)} />
-          ) : null }
-        </View>
-      </PaperProvider>
+      <ScreensLayout>
+        {this.state.properties ? (
+          <PropertyList properties={this.state.properties} onPressProperty={this.showProperty.bind(this)} />
+        ) : null }
+      </ScreensLayout>
     );
   }
 }
