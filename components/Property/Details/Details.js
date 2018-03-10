@@ -2,14 +2,14 @@ import React from 'react';
 import { arrayOf, shape } from 'prop-types';
 import { ScrollView, View } from 'glamorous-native';
 
-PropertyDetail.propTypes = {
+PropertyDetails.propTypes = {
 }
 
-function PropertyDetail(props) {
+function PropertyDetails(props) {
   return (
     <View>
     </View>
   )
 }
 
-export default PropertyDetail
+export default PropertyDetails

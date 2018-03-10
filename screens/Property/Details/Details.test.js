@@ -1,6 +1,6 @@
 import React from 'react';
-import ScreensPropertyDetails from './Detail';
-import PropertyDetail from '../../../components/Property/Detail';
+import ScreensPropertyDetails from './Details';
+import PropertyDetails from '../../../components/Property/Details';
 import ScreensLayout from '../Layout';
 
 import renderer from 'react-test-renderer';
@@ -12,8 +12,8 @@ describe("ScreensPropertyDetails", () => {
     expect(screensPropertyDetails.findAllByType(ScreensLayout).length).toEqual(1)
   });
 
-  it('renders `PropertyDetail`', () => {
-    expect(screensPropertyDetails.findAllByType(PropertyDetail).length).toEqual(1)
+  it('renders `PropertyDetails`', () => {
+    expect(screensPropertyDetails.findAllByType(PropertyDetails).length).toEqual(1)
   });
 
 });
