@@ -11,7 +11,7 @@ PropertyList.propTypes = {
 function PropertyList({ properties, onPressProperty }) {
   return (
     <ScrollView>  
-      <View>
+      <View style={{ marginBottom: 10 }}>
         {properties ?
           properties.map((property, index) =>
             <PropertyListItem  

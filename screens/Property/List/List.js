@@ -1,6 +1,6 @@
 import React from 'react';
 import PropertyList from '../../../components/Property/List';
-import ScreensLayout from '../Layout';
+import ScreensLayout from '../../Layout';
 
 class ScreensPropertyList extends React.Component {
   constructor(props) {
@@ -29,7 +29,7 @@ class ScreensPropertyList extends React.Component {
   }
 
   showProperty() {
-    this.props.navigation.navigate('Detail')
+    this.props.navigation.navigate('Details')
   }
 
   render() {

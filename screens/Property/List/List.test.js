@@ -1,7 +1,7 @@
 import React from 'react';
 import ScreensPropertyList from './List';
 import PropertyList from '../../../components/Property/List';
-import ScreensLayout from '../Layout';
+import ScreensLayout from '../../Layout';
 
 import renderer from 'react-test-renderer';
 
