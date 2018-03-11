@@ -6,7 +6,12 @@ import ScreensLayout from '../../Layout';
 import renderer from 'react-test-renderer';
 
 describe("ScreensPropertyList", () => {
+  fetch = jest.fn(() => new Promise(resolve => resolve()));
   let screensPropertyList = renderer.create(<ScreensPropertyList />).root
+
+  it('calls `loadProperties`', () => {
+    expect(fetch.mock.calls.length).toBe(1)
+  });
 
   it('renders a `ScreensLayout`', () => {
     expect(screensPropertyList.findAllByType(ScreensLayout).length).toEqual(1)
