@@ -20,7 +20,7 @@ describe("PropertyListItem", () => {
 
   beforeEach(() => {
     props = {
-      description: 'Description',
+      title: 'Title',
       price: '500',
       onPressProperty: jest.fn()
     };
@@ -58,9 +58,9 @@ describe("PropertyListItem", () => {
     expect(propertyListItem().findAllByType(Title).length).toEqual(1)
   })
 
-  it("passes `description` to the rendered `Title` as `children`", () => {
+  it("passes `title` to the rendered `Title` as `children`", () => {
     const title = propertyListItem().findByType(Title);
-    expect(title.props.children).toBe(props.description);
+    expect(title.props.children).toBe(props.title);
   });
 
   it('always renders a `Paragraph`', () => {

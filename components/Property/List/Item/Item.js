@@ -9,14 +9,14 @@ import s from './styles';
 
 PropertyListItem.propTypes = {
   image: oneOfType([ number, object]),
-  description: string.isRequired,
+  title: string.isRequired,
   price: string.isRequired,
   onPressProperty: func
 }
 
 function PropertyListItem({
   image = Images.house, 
-  description, 
+  title, 
   price,
   onPressProperty
 }) {
@@ -24,7 +24,7 @@ function PropertyListItem({
     <Card style={s.card} onPress={onPressProperty}>
       <CardCover source={image} />
       <CardContent>
-        <Title style={s.title}>{description}</Title>
+        <Title style={s.title}>{title}</Title>
         <Paragraph style={s.paragraph}>From ₹{price} per night</Paragraph>
       </CardContent>
     </Card>

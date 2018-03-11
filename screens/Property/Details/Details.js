@@ -1,8 +1,18 @@
 import React from 'react';
 import PropertyDetails from '../../../components/Property/Details';
 import ScreensLayout from '../../Layout'
+import Images from '@assets/images'
 
 class ScreensPropertyDetails extends React.Component {
+
+  constructor() {
+    super()
+
+    this.state = {
+      image: Images.house,
+      title: 'Title'
+    }
+  }
 
   static navigationOptions = {
     title: 'Details'
@@ -11,7 +21,7 @@ class ScreensPropertyDetails extends React.Component {
   render() {
     return (
       <ScreensLayout>
-        <PropertyDetails />
+        <PropertyDetails {...this.state} />
       </ScreensLayout>
     );
   }

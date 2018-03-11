@@ -16,4 +16,12 @@ describe("ScreensPropertyDetails", () => {
     expect(screensPropertyDetails.findAllByType(PropertyDetails).length).toEqual(1)
   });
 
+  it('passes `image` to `PropertyDetails`', () => {
+    expect(screensPropertyDetails.findByType(PropertyDetails).props.image).toBeDefined()
+  })
+
+  it('passes `title` to `PropertyDetails`', () => {
+    expect(screensPropertyDetails.findByType(PropertyDetails).props.title).toBeDefined()
+  })
+
 });

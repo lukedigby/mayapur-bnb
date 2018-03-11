@@ -9,15 +9,15 @@ class ScreensPropertyList extends React.Component {
     this.state = {
       properties: [
         {
-          description: '2 Bedroom Flat',
+          title: '2 Bedroom Flat',
           price: '2500'
         },
         {
-          description: 'Single Room',
+          title: 'Single Room',
           price: '500'
         },
         {
-          description: '1 Bedroom Apartment',
+          title: '1 Bedroom Apartment',
           price: '1500'
         },
       ]

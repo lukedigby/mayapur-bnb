@@ -38,7 +38,7 @@ describe("PropertyList", () => {
   describe("when `properties` is passed", () => {
     beforeEach(() => {
       props.properties = [{
-        description: 'Test Description',
+        title: 'Test Title',
         price: '500',
         image: Images.house
       }];
@@ -48,9 +48,9 @@ describe("PropertyList", () => {
       expect(propertyList().findAllByType(PropertyListItem).length).toBe(1);
     });
 
-    it("passes the property description as a prop to `PropertyListItem`", () => {
+    it("passes the property title as a prop to `PropertyListItem`", () => {
       const propertyListItem = propertyList().findByType(PropertyListItem);
-      expect(propertyListItem.props.description).toBe(props.properties[0].description);
+      expect(propertyListItem.props.title).toBe(props.properties[0].title);
     });
 
     it("passes the property price as a prop to `PropertyListItem`", () => {
