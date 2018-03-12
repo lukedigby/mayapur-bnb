@@ -39,7 +39,7 @@ describe("PropertyList", () => {
     beforeEach(() => {
       props.properties = [{
         title: 'Test Title',
-        price: '500',
+        price: 500,
         image: Images.house
       }];
     });

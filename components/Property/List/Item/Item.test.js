@@ -21,7 +21,7 @@ describe("PropertyListItem", () => {
   beforeEach(() => {
     props = {
       title: 'Title',
-      price: '500',
+      price: 500,
       onPressProperty: jest.fn()
     };
     renderedPropertyListItem = undefined;

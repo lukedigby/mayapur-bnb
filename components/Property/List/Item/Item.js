@@ -10,7 +10,7 @@ import s from './styles';
 PropertyListItem.propTypes = {
   image: oneOfType([ number, object]),
   title: string.isRequired,
-  price: string.isRequired,
+  price: number.isRequired,
   onPressProperty: func
 }
 
