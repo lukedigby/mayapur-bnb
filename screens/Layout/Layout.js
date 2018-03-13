@@ -6,7 +6,7 @@ import theme from './theme'
 function ScreensLayout({ children }) {
   return (
     <PaperProvider theme={theme}>
-      <View style={{backgroundColor: theme.colors.background}}>
+      <View style={{ flex: 1 }}>
         { children }
       </View>
     </PaperProvider>

@@ -20,7 +20,7 @@ class PropertyList extends React.Component{
     const { properties, onPressProperty } = this.props
     
     return (
-      <ScrollView>  
+      <ScrollView style={s.list}>  
         <View style={s.container}>
           {properties.map((property, index) =>
             <PropertyListItem  

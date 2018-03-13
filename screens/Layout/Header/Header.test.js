@@ -56,7 +56,7 @@ describe("ScreensLayoutHeader", () => {
 
     it('passes `navigation.pop` to `ToolbarBackAction` as `onPress`', () => {
       const toolbarBackAction = screensLayoutHeader().findByType(ToolbarBackAction)
-      expect(toolbarBackAction.props.onPress).toBe(props.navigation.pop)
+      expect(toolbarBackAction.props.onPress).toBe(props.navigation.pop())
     })
   })
 

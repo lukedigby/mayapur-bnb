@@ -17,7 +17,7 @@ class ScreensPropertyDetails extends React.Component {
     const { property } = this.props.navigation.state.params
     return (
       <ScreensLayout>
-        <PropertyDetails {...property} />
+        <PropertyDetails {...property} navigation={this.props.navigation}/>
       </ScreensLayout>
     );
   }

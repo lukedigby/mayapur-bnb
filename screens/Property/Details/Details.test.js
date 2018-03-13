@@ -37,4 +37,8 @@ describe("ScreensPropertyDetails", () => {
     expect(screensPropertyDetails.findByType(PropertyDetails).props.description).toBeDefined()
   })
 
+  it('passes `navigation` to `PropertyDetails`', () => {
+    expect(screensPropertyDetails.findByType(PropertyDetails).props.navigation).toEqual(props.navigation)
+  })
+
 });

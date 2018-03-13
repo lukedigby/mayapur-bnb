@@ -2,6 +2,7 @@ import React from 'react';
 import PropertyDetails from './Details';
 import { ScrollView, View, Image } from 'glamorous-native';
 import { Headline, Paragraph } from 'react-native-paper';
+import { Calendar } from 'react-native-calendars'
 import Images from '@assets/images'
 
 import renderer from 'react-test-renderer';
