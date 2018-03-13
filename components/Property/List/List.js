@@ -2,7 +2,7 @@ import React from 'react';
 import { arrayOf, shape, func } from 'prop-types';
 import { ScrollView, View } from 'glamorous-native';
 import PropertyListItem from './Item';
-
+import s from './styles';
 
 class PropertyList extends React.Component{
   state = {refreshing: false}
@@ -12,17 +12,20 @@ class PropertyList extends React.Component{
     onPressProperty: func.isRequired
   }
 
+  static defaultProps = {
+    properties: []
+  }
+
   render(){
     const { properties, onPressProperty } = this.props
     
     return (
       <ScrollView>  
-        <View style={{ marginBottom: 10 }}>
-          {properties ?
-            properties.map((property, index) =>
-              <PropertyListItem  
-                key={index} {...property} onPressProperty={onPressProperty} />
-            ) : null }
+        <View style={s.container}>
+          {properties.map((property, index) =>
+            <PropertyListItem  
+              key={index} {...property} onPressProperty={onPressProperty} />
+          )}
         </View>
       </ScrollView>
     )

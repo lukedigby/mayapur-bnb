@@ -8,7 +8,7 @@ import Images from '@assets/images'
 import s from './styles';
 
 const listItemPropTypes = {
-  image: oneOfType([ number, object]),
+  image: oneOfType([ number, object]).isRequired,
   title: string.isRequired,
   price: number.isRequired,
   id: number.isRequired,
@@ -25,10 +25,6 @@ class PropertyListItem extends React.Component {
   static propTypes = {
     ...listItemPropTypes,
     onPressProperty: func.isRequired
-  }
-
-  static defaultProps = {
-    image: Images.house
   }
 
   onPress() {

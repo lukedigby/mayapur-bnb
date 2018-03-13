@@ -50,12 +50,10 @@ class ScreensPropertyList extends React.Component {
 
     return (
       <ScreensLayout>
-        {properties ? (
-          <PropertyList 
-            properties={properties} 
-            onPressProperty={this.showPropertyDetails} 
-          />
-        ) : null }
+        <PropertyList 
+          properties={properties} 
+          onPressProperty={this.showPropertyDetails} 
+        />
       </ScreensLayout>
     );
   }

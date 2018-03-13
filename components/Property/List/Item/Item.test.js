@@ -25,6 +25,7 @@ describe("PropertyListItem", () => {
       id: 1,
       title: 'Title',
       price: 500,
+      image: Images.house,
       onPressProperty: jest.fn()
     };
     renderedPropertyListItem = undefined;
@@ -43,14 +44,9 @@ describe("PropertyListItem", () => {
     expect(propertyListItem().findAllByType(CardCover).length).toEqual(1)
   })
 
-  describe('when `image` is passed', () => {
-    beforeEach(() => {
-      props.image = Images.house
-    })
-    
-    it('passes `image` to the `CardCover` as `source`', () => {
-      const cardCover = propertyListItem().findByType(CardCover)
-    })
+  it('passes `image` to the `CardCover` as `source`', () => {
+    const cardCover = propertyListItem().findByType(CardCover)
+    expect(cardCover.props.source).toEqual(props.image)
   })
 
   it('always renders a `CardContent`', () => {

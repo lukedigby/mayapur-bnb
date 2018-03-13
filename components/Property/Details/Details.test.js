@@ -1,7 +1,7 @@
 import React from 'react';
 import PropertyDetails from './Details';
-import { View, Image } from 'glamorous-native';
-import { Headline } from 'react-native-paper';
+import { ScrollView, View, Image } from 'glamorous-native';
+import { Headline, Paragraph } from 'react-native-paper';
 import Images from '@assets/images'
 
 import renderer from 'react-test-renderer';
@@ -22,10 +22,15 @@ describe("PropertyDetails", () => {
   beforeEach(() => {
     props = {
       image: Images.house,
-      title: 'Title'
+      title: 'Title',
+      description: 'Description'
     };
     renderedPropertyDetails = undefined;
   });
+
+  it('always renders a `ScrollView`', () => {
+    expect(propertyDetails().findByType(ScrollView)).toBeTruthy()
+  })
 
   it('always renders a `View`', () => {
     expect(propertyDetails().findByType(View)).toBeTruthy()
@@ -47,5 +52,14 @@ describe("PropertyDetails", () => {
   it('passes `title` to rendered `Headline` as `children`', () => {
     const headline = propertyDetails().findByType(Headline)
     expect(headline.props.children).toEqual(props.title)
+  })
+
+  it('always renders a `Paragraph`', () => {
+    expect(propertyDetails().findAllByType(Paragraph).length).toEqual(1)
+  })
+
+  it('passes `description` to rendered `Paragraph` as `children`', () => {
+    const paragraph = propertyDetails().findByType(Paragraph)
+    expect(paragraph.props.children).toEqual(props.description)
   })
 })

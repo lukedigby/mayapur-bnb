@@ -20,7 +20,7 @@ function ScreensLayoutHeader({
 }) {
   return (
     <Toolbar theme={theme}>
-      {navigation.state.routes.length > 1 && <ToolbarBackAction onPress={() => navigation.pop()} />}
+      {navigation.state.routes.length > 1 && <ToolbarBackAction onPress={navigation.pop} />}
       <ToolbarContent 
         title={getScreenDetails(scene).options.title} 
       />

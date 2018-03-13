@@ -11,7 +11,7 @@ describe("ScreensPropertyList", () => {
   let screensPropertyList = renderedScreensPropertyList.root
   let renderedInstance = renderedScreensPropertyList.getInstance()
 
-  it('calls `loadProperties`', () => {
+  it('calls `loadProperties` on mount', () => {
     expect(fetch.mock.calls.length).toBe(1)
   });
 

@@ -1,25 +1,28 @@
 import React from 'react';
 import { oneOfType, number, object, string } from 'prop-types';
-import { View, Image } from 'glamorous-native';
-import { Headline } from 'react-native-paper';
+import { ScrollView, View, Image } from 'glamorous-native';
+import { Headline, Paragraph } from 'react-native-paper';
 import Images from '@assets/images'
 
 PropertyDetails.propTypes = {
   image: oneOfType([ number, object]).isRequired,
-  title: string.isRequired
+  title: string.isRequired,
+  description: string.isRequired
 }
 
 function PropertyDetails({
-  image = Images.house,
-  title
+  image,
+  title,
+  description
 }) {
   return (
-    <View>
+    <ScrollView>
       <View alignItems="center">
         <Image source={image} />
         <Headline>{title}</Headline>
+        <Paragraph>{description}</Paragraph>
       </View>
-    </View>
+    </ScrollView>
   )
 }
 

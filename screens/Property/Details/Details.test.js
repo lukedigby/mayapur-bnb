@@ -33,4 +33,8 @@ describe("ScreensPropertyDetails", () => {
     expect(screensPropertyDetails.findByType(PropertyDetails).props.title).toBeDefined()
   })
 
+  it('passes `description` to `PropertyDetails`', () => {
+    expect(screensPropertyDetails.findByType(PropertyDetails).props.description).toBeDefined()
+  })
+
 });
