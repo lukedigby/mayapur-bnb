@@ -38,6 +38,7 @@ describe("PropertyList", () => {
   describe("when `properties` is passed", () => {
     beforeEach(() => {
       props.properties = [{
+        id: 1,
         title: 'Test Title',
         price: 500,
         image: Images.house

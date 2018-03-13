@@ -8,9 +8,10 @@ class ScreensPropertyList extends React.Component {
     super(props)
 
     this.state = {
-      properties: [
-      ],
+      properties: []
     }
+
+    this.showPropertyDetails = this.showPropertyDetails.bind(this)
   }
 
   componentWillMount() {
@@ -27,20 +28,32 @@ class ScreensPropertyList extends React.Component {
       response => response.json(),
       error => console.error(error)
     )
+    .then(json => json.map(p => {
+      p.image = { 
+        uri: p.image, 
+        width: 640,
+        height: 480
+      }
+      return p
+    }))
     .then(json => this.setState({ properties: json }))
   }
 
-  showPropertyDetails() {
-    this.props.navigation.navigate('Details')
+  showPropertyDetails(propertyId) {
+    this.props.navigation.navigate('Details', { 
+      property: this.state.properties.find(p => p.id == propertyId ) 
+    })
   }
 
   render() {
+    const { properties } = this.state
+
     return (
       <ScreensLayout>
-        {this.state.properties ? (
+        {properties ? (
           <PropertyList 
-            properties={this.state.properties} 
-            onPressProperty={this.showPropertyDetails.bind(this)} 
+            properties={properties} 
+            onPressProperty={this.showPropertyDetails} 
           />
         ) : null }
       </ScreensLayout>

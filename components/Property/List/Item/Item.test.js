@@ -8,6 +8,7 @@ import renderer from 'react-test-renderer';
 describe("PropertyListItem", () => {
   let renderedPropertyListItem;
   let props;
+  let renderedInstance;
   
   const propertyListItem = () => {
     if (!renderedPropertyListItem) {
@@ -15,11 +16,13 @@ describe("PropertyListItem", () => {
         <PropertyListItem {...props} />
       );
     }
+    renderedInstance = renderedPropertyListItem.getInstance()
     return renderedPropertyListItem.root;
   }
 
   beforeEach(() => {
     props = {
+      id: 1,
       title: 'Title',
       price: 500,
       onPressProperty: jest.fn()
@@ -31,9 +34,9 @@ describe("PropertyListItem", () => {
     expect(propertyListItem().findAllByType(Card).length).toEqual(1)
   })
 
-  it('passes `onPressProperty` to the rendered `Card` as `onPress`', () => {
+  it('passes `onPress` to the rendered `Card` as `onPress`', () => {
     const card = propertyListItem().findByType(Card)
-    expect(card.props.onPress).toBe(props.onPressProperty)
+    expect(card.props.onPress).toEqual(renderedInstance.onPress)
   })
 
   it('always renders a `CardCover`', () => {

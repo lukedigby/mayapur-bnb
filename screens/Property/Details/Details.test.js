@@ -2,11 +2,20 @@ import React from 'react';
 import ScreensPropertyDetails from './Details';
 import PropertyDetails from '../../../components/Property/Details';
 import ScreensLayout from '../../Layout';
+import Images from '@assets/images';
 
 import renderer from 'react-test-renderer';
 
 describe("ScreensPropertyDetails", () => {
-  let screensPropertyDetails = renderer.create(<ScreensPropertyDetails />).root
+  let props = {
+    navigation: { state: { params: { property: {
+      title: 'Title',
+      description: 'Description',
+      price: 1500,
+      image: Images.house
+    } }}}
+  }
+  let screensPropertyDetails = renderer.create(<ScreensPropertyDetails {...props} />).root
 
   it('renders a `ScreensLayout`', () => {
     expect(screensPropertyDetails.findAllByType(ScreensLayout).length).toEqual(1)

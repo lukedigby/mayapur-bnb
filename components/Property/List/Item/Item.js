@@ -7,28 +7,50 @@ import Images from '@assets/images'
 
 import s from './styles';
 
-PropertyListItem.propTypes = {
+const listItemPropTypes = {
   image: oneOfType([ number, object]),
   title: string.isRequired,
   price: number.isRequired,
-  onPressProperty: func
+  id: number.isRequired,
 }
 
-function PropertyListItem({
-  image = Images.house, 
-  title, 
-  price,
-  onPressProperty
-}) {
-  return (    
-    <Card style={s.card} onPress={onPressProperty}>
-      <CardCover source={image} />
-      <CardContent>
-        <Title style={s.title}>{title}</Title>
-        <Paragraph style={s.paragraph}>From ₹{price} per night</Paragraph>
-      </CardContent>
-    </Card>
-  )
+class PropertyListItem extends React.Component {
+  constructor(props) {
+    super(props)
+
+    this.onPress = this.onPress.bind(this) 
+  }
+
+
+  static propTypes = {
+    ...listItemPropTypes,
+    onPressProperty: func.isRequired
+  }
+
+  static defaultProps = {
+    image: Images.house
+  }
+
+  onPress() {
+    this.props.onPressProperty(this.props.id)
+  }
+
+  render() {
+    const {
+      image, 
+      title, 
+      price
+    } = this.props
+    return (
+      <Card style={s.card} onPress={this.onPress}>
+        <CardCover source={image} />
+        <CardContent>
+          <Title style={s.title}>{title}</Title>
+          <Paragraph style={s.paragraph}>From ₹{price} per night</Paragraph>
+        </CardContent>
+      </Card>
+    )
+  }
 }
 
 export default PropertyListItem

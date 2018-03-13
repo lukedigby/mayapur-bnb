@@ -7,7 +7,9 @@ import renderer from 'react-test-renderer';
 
 describe("ScreensPropertyList", () => {
   fetch = jest.fn(() => new Promise(resolve => resolve()));
-  let screensPropertyList = renderer.create(<ScreensPropertyList />).root
+  let renderedScreensPropertyList = renderer.create(<ScreensPropertyList />)
+  let screensPropertyList = renderedScreensPropertyList.root
+  let renderedInstance = renderedScreensPropertyList.getInstance()
 
   it('calls `loadProperties`', () => {
     expect(fetch.mock.calls.length).toBe(1)
@@ -22,11 +24,11 @@ describe("ScreensPropertyList", () => {
   });
 
   it('passes `properties` as a prop to `PropertyList`', () => {
-    expect(screensPropertyList.findAllByType(PropertyList)[0].props.properties).toBeDefined()
+    expect(screensPropertyList.findByType(PropertyList).props.properties).toBeDefined()
   })
 
-  it('passes `onPressProperty` as a prop to `PropertyList`', () => {
-    expect(screensPropertyList.findAllByType(PropertyList)[0].props.onPressProperty).toBeDefined()
+  it('passes `showDetails` to `PropertyList` as `onPressProperty`', () => {
+    expect(screensPropertyList.findByType(PropertyList).props.onPressProperty).toBe(renderedInstance.showPropertyDetails)
   })
 
 });

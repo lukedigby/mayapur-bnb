@@ -7,11 +7,6 @@ class ScreensPropertyDetails extends React.Component {
 
   constructor() {
     super()
-
-    this.state = {
-      image: Images.house,
-      title: 'Title'
-    }
   }
 
   static navigationOptions = {
@@ -19,9 +14,10 @@ class ScreensPropertyDetails extends React.Component {
   }
 
   render() {
+    { property } = this.props.navigation.state.params
     return (
       <ScreensLayout>
-        <PropertyDetails {...this.state} />
+        <PropertyDetails {...property} />
       </ScreensLayout>
     );
   }

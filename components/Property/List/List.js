@@ -8,8 +8,8 @@ class PropertyList extends React.Component{
   state = {refreshing: false}
 
   static propTypes = {
-    properties: arrayOf(shape(PropertyListItem.propTypes)),
-    onPressProperty: func
+    properties: arrayOf(shape(PropertyListItem.listItemPropTypes)),
+    onPressProperty: func.isRequired
   }
 
   render(){
