@@ -6,9 +6,9 @@ const theme = {
   dark: true,
   colors: {
     ...DefaultTheme.colors,
-    primary: Colors.lightBlue500,
+    primary: Colors.lightBlue900,
     accent: Colors.lightBlue300,
-    background: Colors.lightBlue900,
+    background: '#002f6c',
     paper: Colors.lightBlue50,
     text: Colors.black
   }
