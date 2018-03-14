@@ -1,4 +1,4 @@
-# Project Title
+# Mayapur-BnB
 
 A local rental listing app built with TDD in React Native, implementing material design
 
